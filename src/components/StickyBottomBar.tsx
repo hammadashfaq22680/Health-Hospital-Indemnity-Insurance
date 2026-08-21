@@ -14,7 +14,7 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
   operatingHours,
 }) => {
   return (
-    <div className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-3 shadow-xl sm:hidden">
+    <div className="fixed bottom-16 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-b border-slate-200 p-3 shadow-xl sm:hidden">
       <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
         {/* Availability status micro info */}
         <div className="flex flex-col text-left">
