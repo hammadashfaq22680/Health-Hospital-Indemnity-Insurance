@@ -1,0 +1,7 @@
+{
+  "name": "Health Coverage Guide",
+  "description": "Independent hospital indemnity insurance information prelander connecting consumers with licensed insurance representatives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
