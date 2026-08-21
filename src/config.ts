@@ -3,6 +3,7 @@ import { FAQItem, OperatingHours } from './types';
 // Your official rented MarketCall tracking phone line
 export const DEFAULT_PHONE_NUMBER = '1-888-217-4269';
 export const DEFAULT_PHONE_DISPLAY = '(888) 217-4269';
+export const DEFAULT_PHONE_TEL = 'tel:18882174269';
 
 /**
  * Parses and strictly sanitizes phone number from URL parameter if present, else returns default.
@@ -24,7 +25,7 @@ export function getTrackingPhoneNumber(): { raw: string; display: string; tel: s
           return {
             raw: `1-${area}-${prefix}-${line}`,
             display: `(${area}) ${prefix}-${line}`,
-            tel: `tel:+1${digits}`
+            tel: `tel:1${digits}`
           };
         } else if (digits.length === 11 && digits.startsWith('1') && /^[2-9]/.test(digits.slice(1))) {
           const area = digits.slice(1, 4);
@@ -33,7 +34,7 @@ export function getTrackingPhoneNumber(): { raw: string; display: string; tel: s
           return {
             raw: `1-${area}-${prefix}-${line}`,
             display: `(${area}) ${prefix}-${line}`,
-            tel: `tel:+${digits}`
+            tel: `tel:${digits}`
           };
         }
       }
@@ -45,7 +46,7 @@ export function getTrackingPhoneNumber(): { raw: string; display: string; tel: s
   return {
     raw: DEFAULT_PHONE_NUMBER,
     display: DEFAULT_PHONE_DISPLAY,
-    tel: 'tel:+18884150922'
+    tel: DEFAULT_PHONE_TEL
   };
 }
 
