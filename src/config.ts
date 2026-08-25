@@ -1,9 +1,9 @@
 import { FAQItem, OperatingHours } from './types';
 
 // Your official rented MarketCall tracking phone line
-export const DEFAULT_PHONE_NUMBER = '1-888-217-4269';
-export const DEFAULT_PHONE_DISPLAY = '(888) 217-4269';
-export const DEFAULT_PHONE_TEL = 'tel:18882174269';
+export const DEFAULT_PHONE_NUMBER = '1-888-217-0102';
+export const DEFAULT_PHONE_DISPLAY = '(888) 217-0102';
+export const DEFAULT_PHONE_TEL = 'tel:18882170102';
 
 /**
  * Parses and strictly sanitizes phone number from URL parameter if present, else returns default.
