@@ -1,9 +1,9 @@
 import { FAQItem, OperatingHours } from './types';
 
 // Your official rented MarketCall tracking phone line
-export const DEFAULT_PHONE_NUMBER = '1-866-332-0731';
-export const DEFAULT_PHONE_DISPLAY = '(866) 332-0731';
-export const DEFAULT_PHONE_TEL = 'tel:18663320731';
+export const DEFAULT_PHONE_NUMBER = '1-888-217-6154';
+export const DEFAULT_PHONE_DISPLAY = '(888) 217-6154';
+export const DEFAULT_PHONE_TEL = 'tel:18882176154';
 
 /**
  * Parses and strictly sanitizes phone number from URL parameter if present, else returns default.
