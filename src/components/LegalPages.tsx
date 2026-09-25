@@ -27,65 +27,65 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen py-8 sm:py-12">
+    <div className="min-h-screen py-8 sm:py-12 relative z-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Back navigation button */}
         <div className="mb-6">
           <button
             onClick={() => onNavigate('home')}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-2xs transition-colors cursor-pointer"
+            className="glass-btn-secondary inline-flex items-center gap-2 text-sm font-semibold text-blue-700 hover:text-blue-900 px-5 py-2.5 rounded-full cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Home Overview</span>
           </button>
         </div>
 
-        {/* Tab switcher */}
-        <div className="flex flex-wrap gap-2 mb-8 bg-white p-1.5 rounded-xl border border-slate-200 shadow-2xs">
+        {/* Tab switcher (Liquid Glass Pill Bar) */}
+        <div className="flex flex-wrap gap-1.5 mb-8 glass-panel-subtle p-1.5 rounded-full shadow-2xs">
           <button
             onClick={() => onNavigate('privacy')}
-            className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               currentPage === 'privacy'
-                ? 'bg-blue-700 text-white'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                ? 'glass-btn-primary text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
             Privacy Policy
           </button>
           <button
             onClick={() => onNavigate('terms')}
-            className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               currentPage === 'terms'
-                ? 'bg-blue-700 text-white'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                ? 'glass-btn-primary text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
             Terms &amp; Conditions
           </button>
           <button
             onClick={() => onNavigate('disclaimer')}
-            className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               currentPage === 'disclaimer'
-                ? 'bg-blue-700 text-white'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                ? 'glass-btn-primary text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
             Disclosures &amp; Disclaimers
           </button>
           <button
             onClick={() => onNavigate('contact')}
-            className={`px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
               currentPage === 'contact'
-                ? 'bg-blue-700 text-white'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                ? 'glass-btn-primary text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
             }`}
           >
             Contact &amp; Support
           </button>
         </div>
 
-        {/* Page Container */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-10 shadow-xs">
+        {/* Page Container (Liquid Glass Panel) */}
+        <div className="glass-panel rounded-[28px] sm:rounded-[32px] p-6 sm:p-10 transition-all duration-300">
           {/* ================= PRIVACY POLICY ================= */}
           {currentPage === 'privacy' && (
             <div className="space-y-6 text-slate-700 text-sm leading-relaxed">
@@ -354,7 +354,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
                       </div>
                       <button
                         type="submit"
-                        className="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-md transition-colors cursor-pointer"
+                        className="w-full py-3 glass-btn-primary rounded-full text-white font-bold text-xs transition-all cursor-pointer shadow-xs"
                       >
                         Submit Inquiry
                       </button>

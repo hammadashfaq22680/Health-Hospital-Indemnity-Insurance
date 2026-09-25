@@ -72,19 +72,33 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-slate-100/60 to-slate-50 text-slate-900 flex flex-col font-sans selection:bg-blue-600 selection:text-white relative overflow-x-hidden">
+      {/* iOS 26 Liquid Glass Ambient Gradient Blobs (Calm, Soft, Heavily Blurred behind Glass) */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        {/* Soft Sky Blue Blob top-left */}
+        <div className="absolute -top-32 -left-32 w-[34rem] h-[34rem] rounded-full bg-blue-300/22 blur-[120px] mix-blend-multiply" />
+        {/* Soft Cyan/Teal Blob middle-right */}
+        <div className="absolute top-[28%] -right-24 w-[32rem] h-[32rem] rounded-full bg-teal-200/20 blur-[130px] mix-blend-multiply" />
+        {/* Soft Indigo/Blue Blob lower-left */}
+        <div className="absolute top-[58%] -left-20 w-[30rem] h-[30rem] rounded-full bg-indigo-200/18 blur-[120px] mix-blend-multiply" />
+        {/* Soft Blue/Teal Blob bottom-right */}
+        <div className="absolute bottom-16 -right-16 w-[28rem] h-[28rem] rounded-full bg-sky-200/22 blur-[110px] mix-blend-multiply" />
+      </div>
+
       {/* Main Global Header */}
-      <Header
-        phoneDisplay={phoneInfo.display}
-        phoneTel={phoneInfo.tel}
-        operatingHours={operatingHours}
-        currentPage={currentPage}
-        onNavigate={handleNavigate}
-        onOpenCallbackModal={() => setIsCallbackModalOpen(true)}
-      />
+      <div className="relative z-40">
+        <Header
+          phoneDisplay={phoneInfo.display}
+          phoneTel={phoneInfo.tel}
+          operatingHours={operatingHours}
+          currentPage={currentPage}
+          onNavigate={handleNavigate}
+          onOpenCallbackModal={() => setIsCallbackModalOpen(true)}
+        />
+      </div>
 
       {/* Page Content */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         {currentPage === 'home' ? (
           <>
             <Hero
@@ -136,11 +150,13 @@ export default function App() {
       </main>
 
       {/* Global Footer with All Disclosures & Sub-page Links */}
-      <Footer
-        phoneDisplay={phoneInfo.display}
-        phoneTel={phoneInfo.tel}
-        onNavigate={handleNavigate}
-      />
+      <div className="relative z-10">
+        <Footer
+          phoneDisplay={phoneInfo.display}
+          phoneTel={phoneInfo.tel}
+          onNavigate={handleNavigate}
+        />
+      </div>
 
       {/* Mobile Sticky Bottom Call Bar (Only shown on home page view) */}
       {currentPage === 'home' && (

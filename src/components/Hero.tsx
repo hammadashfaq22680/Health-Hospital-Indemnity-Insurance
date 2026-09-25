@@ -16,11 +16,11 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenCallbackModal,
 }) => {
   return (
-    <section className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100/70 pt-8 pb-14 sm:pt-12 sm:pb-20 border-b border-slate-200/80">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        {/* Trust & Non-Government Subtitle Eyebrow Badge */}
-        <div className="flex items-center justify-center mb-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
+    <section className="relative pt-8 pb-14 sm:pt-14 sm:pb-20 border-b border-slate-200/60 overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        {/* Trust & Non-Government Subtitle Eyebrow Badge (Glass Pill) */}
+        <div className="flex items-center justify-center mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-pill text-blue-700 text-xs font-bold uppercase tracking-wider">
             <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
             <span>Independent Supplemental Insurance Information</span>
           </div>
@@ -28,21 +28,21 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Hero Main Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.14]">
             Hospital Indemnity <span className="text-blue-700">Insurance</span>
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
             Understand how supplemental hospital indemnity coverage pays a set cash amount directly to you if you are admitted to a hospital. Learn how cash benefits can help offset deductibles and daily living expenses while recovering.
           </p>
         </div>
 
-        {/* Primary Consolidated Action Panel (Single Clean Card, No Inner Borders) */}
-        <div className="mt-8 max-w-2xl mx-auto bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
+        {/* Primary Consolidated Action Panel (Single Clean Liquid Glass Card, 28-32px continuous curve) */}
+        <div className="mt-9 max-w-2xl mx-auto glass-panel rounded-[28px] sm:rounded-[32px] p-6 sm:p-9 transition-all duration-300">
           <div className="flex flex-col items-center text-center">
-            {/* Live Availability Status Badge (Strictly Dynamic) */}
+            {/* Live Availability Status Badge */}
             {operatingHours.isOpen ? (
-              <div className="flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 mb-4">
+              <div className="flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-800 border border-emerald-500/20 backdrop-blur-md mb-4 shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Agents Available Now</span>
                 <span className="text-emerald-400">·</span>
@@ -52,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({
               <button
                 onClick={onOpenCallbackModal}
                 type="button"
-                className="flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 transition-colors mb-4 cursor-pointer"
+                className="flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-900 border border-amber-500/25 backdrop-blur-md hover:bg-amber-500/15 transition-all mb-4 cursor-pointer shadow-2xs"
                 title="Click to request a scheduled callback"
               >
                 <span className="w-2 h-2 rounded-full bg-amber-500"></span>
@@ -62,22 +62,22 @@ export const Hero: React.FC<HeroProps> = ({
               </button>
             )}
 
-            <p className="text-sm font-semibold text-slate-700 mb-2">
+            <p className="text-sm font-semibold text-slate-700 mb-3">
               Speak with a Licensed Insurance Representative:
             </p>
 
-            {/* Large Primary Phone Button */}
+            {/* Large Primary Phone Button (Translucent Blue Glass Pill) */}
             <a
               href={phoneTel}
               id="hero-primary-call-btn"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-xl sm:text-2xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-300"
+              className="w-full sm:w-auto glass-btn-primary rounded-full inline-flex items-center justify-center gap-3.5 px-8 py-4 sm:py-4.5 text-white font-extrabold text-xl sm:text-2xl focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-300"
               aria-label={`Call licensed representative at ${phoneDisplay}`}
             >
-              <div className="p-2 rounded-lg bg-blue-800/80 text-white">
+              <div className="p-2.5 rounded-full bg-white/20 border border-white/30 backdrop-blur-xs text-white">
                 <Phone className="w-6 h-6" />
               </div>
               <div className="text-left">
-                <span className="block text-[11px] font-medium text-blue-200 uppercase tracking-wider">
+                <span className="block text-[10px] font-semibold text-blue-100 uppercase tracking-wider">
                   Toll-Free Phone Assistance
                 </span>
                 <span className="tracking-tight">{phoneDisplay}</span>
@@ -100,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
             </div>
 
-            {/* Secondary Option: Callback link (No inner border) */}
+            {/* Secondary Option: Callback link (Continuous, no inner border) */}
             <div className="mt-4 text-xs text-slate-500 w-full flex items-center justify-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-slate-400" />
               <span>Prefer to schedule a call?</span>

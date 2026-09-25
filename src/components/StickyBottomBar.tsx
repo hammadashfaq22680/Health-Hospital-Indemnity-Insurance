@@ -14,26 +14,26 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
   operatingHours,
 }) => {
   return (
-    <div className="fixed bottom-16 inset-x-0 z-40 bg-white/95 backdrop-blur-md border-t border-b border-slate-200 p-3 shadow-xl sm:hidden">
-      <div className="flex items-center justify-between gap-3 max-w-md mx-auto">
+    <div className="fixed bottom-14 inset-x-3 z-40 sm:hidden max-w-md mx-auto">
+      <div className="glass-panel rounded-full p-2.5 px-4 shadow-[0_12px_36px_rgba(15,23,42,0.18)] flex items-center justify-between gap-3">
         {/* Availability status micro info */}
-        <div className="flex flex-col text-left">
+        <div className="flex flex-col text-left pl-1">
           <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800">
             <span
               className={`w-2 h-2 rounded-full ${
                 operatingHours.isOpen ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'
               }`}
             ></span>
-            <span>{operatingHours.isOpen ? 'Agents Available' : 'Lines Open in ET'}</span>
+            <span>{operatingHours.isOpen ? 'Agents Ready' : 'Lines Open in ET'}</span>
           </div>
-          <span className="text-[10px] text-slate-500 font-medium">Direct Call · No Obligation</span>
+          <span className="text-[10px] text-slate-500 font-medium">Direct · No Obligation</span>
         </div>
 
-        {/* Primary Call Action Button (Unified Primary Blue #1d4ed8) */}
+        {/* Primary Call Action Button (Translucent Blue Glass Pill) */}
         <a
           href={phoneTel}
           id="mobile-sticky-call-btn"
-          className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-700 active:bg-blue-900 text-white font-bold text-base shadow-md focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-600"
+          className="flex-1 glass-btn-primary rounded-full inline-flex items-center justify-center gap-2 py-3 px-4 text-white font-extrabold text-sm focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-600"
           aria-label={`Call licensed representative at ${phoneDisplay}`}
         >
           <Phone className="w-4 h-4 text-white" />

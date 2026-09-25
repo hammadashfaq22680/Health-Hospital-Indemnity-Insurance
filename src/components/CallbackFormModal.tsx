@@ -68,28 +68,28 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-6"
+      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/50 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
       role="dialog"
       aria-modal="true"
       aria-labelledby="callback-modal-title"
     >
-      <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden transform transition-all my-auto max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-lg glass-panel rounded-[32px] shadow-2xl border border-white/80 overflow-hidden transform transition-all my-auto max-h-[92vh] flex flex-col">
         {/* Modal Header */}
-        <div className="bg-slate-900 text-white p-4 sm:p-6 flex items-start justify-between shrink-0">
+        <div className="bg-slate-900/95 backdrop-blur-xl text-white p-5 sm:p-6 flex items-start justify-between shrink-0 border-b border-white/10">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-blue-300">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-blue-300 bg-white/10 px-3 py-0.5 rounded-full mb-1">
               Secondary Option
             </span>
-            <h3 id="callback-modal-title" className="text-lg sm:text-xl font-bold text-white mt-0.5">
+            <h3 id="callback-modal-title" className="text-lg sm:text-xl font-extrabold text-white mt-0.5">
               Request a Scheduled Callback
             </h3>
             <p className="text-xs text-slate-300 mt-1">
-              Need immediate answers? Call <a href={phoneTel} className="underline text-blue-200 font-bold">{phoneDisplay}</a> directly.
+              Need immediate answers? Call <a href={phoneTel} className="underline text-blue-300 font-bold">{phoneDisplay}</a> directly.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-slate-400 hover:text-white p-1 rounded-lg transition-colors cursor-pointer shrink-0 ml-2"
+            className="text-slate-400 hover:text-white p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors cursor-pointer shrink-0 ml-2"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
@@ -97,29 +97,29 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
         </div>
 
         {/* Modal Body */}
-        <div className="p-4 sm:p-6 overflow-y-auto">
+        <div className="p-5 sm:p-7 overflow-y-auto">
           {submitted ? (
             <div className="text-center py-6">
-              <div className="w-14 h-14 rounded-full bg-teal-100 text-teal-600 mx-auto flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-teal-500/15 border border-teal-500/25 text-teal-600 mx-auto flex items-center justify-center mb-4 shadow-sm">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-bold text-slate-900">Callback Request Received</h4>
+              <h4 className="text-xl font-extrabold text-slate-900">Callback Request Received</h4>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Thank you, {formData.fullName}. A licensed insurance representative will attempt to reach you at <strong>{formData.phoneNumber}</strong> during regular business hours.
               </p>
 
               {/* Direct call prompt for faster service */}
-              <div className="mt-6 p-4 rounded-xl bg-blue-50 border border-blue-200 text-left">
+              <div className="mt-6 p-5 rounded-2xl glass-panel-subtle border border-blue-200/60 text-left">
                 <div className="flex items-center gap-2 text-xs font-bold text-blue-900 mb-1">
                   <Phone className="w-4 h-4 text-blue-700" />
                   <span>Don&apos;t wait for a callback:</span>
                 </div>
-                <p className="text-xs text-slate-600 mb-3">
+                <p className="text-xs text-slate-600 mb-3.5">
                   Representative lines are currently open. You can call directly to speak with an agent right now.
                 </p>
                 <a
                   href={phoneTel}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm transition-colors shadow-xs"
+                  className="w-full glass-btn-primary rounded-full inline-flex items-center justify-center gap-2 py-3 px-4 text-white font-bold text-sm shadow-xs"
                 >
                   <Phone className="w-4 h-4 text-white" />
                   <span>Call {phoneDisplay} Now</span>
@@ -129,7 +129,7 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
               <div className="mt-6">
                 <button
                   onClick={onClose}
-                  className="px-5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg cursor-pointer"
+                  className="px-6 py-2.5 text-xs font-semibold text-slate-700 bg-white/80 hover:bg-white border border-slate-200 rounded-full cursor-pointer shadow-2xs"
                 >
                   Close Window
                 </button>
@@ -146,10 +146,10 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                   placeholder="e.g. Jane Doe"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className={`w-full px-3.5 py-2 text-sm bg-white border rounded-lg focus:outline-hidden focus:ring-1 ${
+                  className={`w-full px-4 py-2.5 text-sm bg-white/90 border rounded-xl focus:outline-hidden focus:ring-2 shadow-2xs ${
                     errors.fullName
                       ? 'border-red-400 focus:ring-red-400'
-                      : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600'
+                      : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600/20'
                   }`}
                 />
                 {errors.fullName && <p className="mt-1 text-xs text-red-600">{errors.fullName}</p>}
@@ -165,10 +165,10 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                     placeholder="(555) 000-0000"
                     value={formData.phoneNumber}
                     onChange={handlePhoneChange}
-                    className={`w-full px-3.5 py-2 text-sm bg-white border rounded-lg focus:outline-hidden focus:ring-1 ${
+                    className={`w-full px-4 py-2.5 text-sm bg-white/90 border rounded-xl focus:outline-hidden focus:ring-2 shadow-2xs ${
                       errors.phoneNumber
                         ? 'border-red-400 focus:ring-red-400'
-                        : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600'
+                        : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600/20'
                     }`}
                   />
                   {errors.phoneNumber && (
@@ -188,10 +188,10 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, zipCode: e.target.value.replace(/\D/g, '') })
                     }
-                    className={`w-full px-3.5 py-2 text-sm bg-white border rounded-lg focus:outline-hidden focus:ring-1 ${
+                    className={`w-full px-4 py-2.5 text-sm bg-white/90 border rounded-xl focus:outline-hidden focus:ring-2 shadow-2xs ${
                       errors.zipCode
                         ? 'border-red-400 focus:ring-red-400'
-                        : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600'
+                        : 'border-slate-300 focus:border-blue-600 focus:ring-blue-600/20'
                     }`}
                   />
                   {errors.zipCode && <p className="mt-1 text-xs text-red-600">{errors.zipCode}</p>}
@@ -205,7 +205,7 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                 <select
                   value={formData.preferredTime}
                   onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                  className="w-full px-3.5 py-2 text-sm bg-white border border-slate-300 rounded-lg focus:outline-hidden focus:border-blue-600 focus:ring-1 focus:ring-blue-600 text-slate-700"
+                  className="w-full px-4 py-2.5 text-sm bg-white/90 border border-slate-300 rounded-xl focus:outline-hidden focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 text-slate-700 shadow-2xs"
                 >
                   <option value="Morning (9:30 AM - 12:00 PM ET)">Morning (9:30 AM - 12:00 PM ET)</option>
                   <option value="Afternoon (12:00 PM - 4:00 PM ET)">Afternoon (12:00 PM - 4:00 PM ET)</option>
@@ -221,7 +221,7 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                     type="checkbox"
                     checked={formData.tcpaConsent}
                     onChange={(e) => setFormData({ ...formData, tcpaConsent: e.target.checked })}
-                    className="mt-1 h-4 w-4 rounded-sm border-slate-300 text-blue-600 focus:ring-blue-500 shrink-0"
+                    className="mt-1 h-4 w-4 rounded-md border-slate-300 text-blue-600 focus:ring-blue-500 shrink-0"
                   />
                   <span className="text-[11px] text-slate-500 leading-relaxed">
                     <strong className="text-slate-700">TCPA Authorization &amp; Consent:</strong>{' '}
@@ -240,14 +240,14 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
               <div className="pt-3 flex flex-col sm:flex-row items-center gap-3">
                 <button
                   type="submit"
-                  className="w-full sm:flex-1 py-3 px-4 bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-sm rounded-xl transition-colors cursor-pointer shadow-xs"
+                  className="w-full sm:flex-1 py-3.5 px-5 glass-btn-primary rounded-full text-white font-bold text-sm transition-all cursor-pointer shadow-xs"
                 >
                   Submit Callback Request
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full sm:w-auto py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-colors cursor-pointer"
+                  className="w-full sm:w-auto py-3 px-5 bg-white/80 hover:bg-white text-slate-700 font-medium text-sm rounded-full transition-colors cursor-pointer border border-slate-200"
                 >
                   Cancel
                 </button>

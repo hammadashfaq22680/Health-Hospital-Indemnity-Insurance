@@ -35,43 +35,43 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ phoneDisplay, phoneTel }
   ];
 
   return (
-    <section id="how-it-works" className="py-14 sm:py-20 bg-slate-50 border-t border-slate-200">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+    <section id="how-it-works" className="py-14 sm:py-20 relative border-t border-slate-200/60">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full glass-pill text-blue-700 text-xs font-bold uppercase tracking-wider">
             Simple 3-Step Process
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
             How It Works
           </h2>
-          <p className="mt-3 text-slate-600 text-sm sm:text-base">
+          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
             Connecting by phone gives you direct answers regarding hospital indemnity policies without confusing web forms.
           </p>
         </div>
 
-        {/* Steps Grid - Identical Card Tokens */}
+        {/* Steps Grid - Liquid Glass Surfaces */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
           {steps.map((item) => {
             const IconComponent = item.icon;
             return (
               <div
                 key={item.step}
-                className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs relative flex flex-col"
+                className="glass-panel-subtle rounded-[28px] p-6 sm:p-8 relative flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/60"
               >
                 {/* Step number badge & Icon */}
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-xs font-bold text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-md">
+                  <span className="font-mono text-xs font-bold text-blue-700 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full backdrop-blur-xs">
                     Step {item.step}
                   </span>
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-700 flex items-center justify-center">
                     <IconComponent className="w-5 h-5 text-blue-700" />
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-2 leading-snug">{item.title}</h3>
+                <h3 className="text-lg font-extrabold text-slate-900 mb-2 leading-snug">{item.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-1">{item.description}</p>
 
-                <div className="pt-4 border-t border-slate-100 text-xs text-slate-500 font-medium">
+                <div className="pt-4 border-t border-slate-200/50 text-xs text-slate-500 font-medium">
                   <span className="text-blue-700 font-semibold">Tip: </span>
                   {item.tip}
                 </div>
@@ -80,15 +80,15 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ phoneDisplay, phoneTel }
           })}
         </div>
 
-        {/* Action callout banner - Matching Card Styling */}
-        <div className="mt-10 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
+        {/* Action callout banner - Elevated Liquid Glass Card */}
+        <div className="mt-10 glass-panel rounded-[28px] p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-5 transition-all duration-300">
           <div className="text-center sm:text-left">
             <h4 className="text-base font-bold text-slate-900">Ready to speak with a licensed agent?</h4>
             <p className="text-xs text-slate-600 mt-0.5">Educational consultation · No obligation to enroll</p>
           </div>
           <a
             href={phoneTel}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-semibold text-sm transition-colors shadow-xs"
+            className="w-full sm:w-auto glass-btn-primary rounded-full inline-flex items-center justify-center gap-2.5 px-6 py-3 text-white font-bold text-sm shadow-xs"
           >
             <span>Call {phoneDisplay}</span>
             <ArrowRight className="w-4 h-4" />
