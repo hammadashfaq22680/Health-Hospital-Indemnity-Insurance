@@ -1,7 +1,6 @@
 import React from 'react';
 import { Phone, Clock, ShieldCheck, CheckCircle2, UserCheck, Banknote, Calendar } from 'lucide-react';
 import { OperatingHours } from '../types';
-import { MANDATORY_DISCLOSURES } from '../config';
 
 interface HeroProps {
   phoneDisplay: string;
@@ -19,17 +18,17 @@ export const Hero: React.FC<HeroProps> = ({
   return (
     <section className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100/70 pt-8 pb-14 sm:pt-12 sm:pb-20 border-b border-slate-200/80">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
-        {/* Trust & Non-Government Subtitle Badge */}
+        {/* Trust & Non-Government Subtitle Eyebrow Badge */}
         <div className="flex items-center justify-center mb-5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-900 text-xs font-semibold tracking-wide">
-            <ShieldCheck className="w-4 h-4 text-blue-700" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
+            <ShieldCheck className="w-4 h-4 text-blue-700 shrink-0" />
             <span>Independent Supplemental Insurance Information</span>
           </div>
         </div>
 
         {/* Hero Main Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.18] font-sans">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18]">
             Hospital Indemnity <span className="text-blue-700">Insurance</span>
           </h1>
 
@@ -38,13 +37,13 @@ export const Hero: React.FC<HeroProps> = ({
           </p>
         </div>
 
-        {/* Primary Call Action Box */}
-        <div className="mt-8 max-w-2xl mx-auto bg-white rounded-2xl border border-slate-200 p-5 sm:p-7 shadow-lg shadow-slate-200/50">
+        {/* Primary Consolidated Action Panel (Single Clean Card, No Inner Borders) */}
+        <div className="mt-8 max-w-2xl mx-auto bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs">
           <div className="flex flex-col items-center text-center">
             {/* Live Availability Status Badge (Strictly Dynamic) */}
             {operatingHours.isOpen ? (
               <div className="flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 mb-4">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span>Agents Available Now</span>
                 <span className="text-emerald-400">·</span>
                 <span className="font-normal text-emerald-700">Lines Open Today</span>
@@ -56,14 +55,14 @@ export const Hero: React.FC<HeroProps> = ({
                 className="flex items-center gap-2 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 transition-colors mb-4 cursor-pointer"
                 title="Click to request a scheduled callback"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                <span className="w-2 h-2 rounded-full bg-amber-500"></span>
                 <span>Currently Closed — Request a Call Back</span>
                 <span className="text-amber-400">·</span>
                 <span className="font-normal text-amber-800">{operatingHours.nextOpenText}</span>
               </button>
             )}
 
-            <p className="text-sm font-semibold text-slate-700 mb-1">
+            <p className="text-sm font-semibold text-slate-700 mb-2">
               Speak with a Licensed Insurance Representative:
             </p>
 
@@ -71,10 +70,10 @@ export const Hero: React.FC<HeroProps> = ({
             <a
               href={phoneTel}
               id="hero-primary-call-btn"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-xl sm:text-2xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-xl sm:text-2xl shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5 focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-300"
               aria-label={`Call licensed representative at ${phoneDisplay}`}
             >
-              <div className="p-2 rounded-lg bg-blue-800/80 text-teal-300">
+              <div className="p-2 rounded-lg bg-blue-800/80 text-white">
                 <Phone className="w-6 h-6" />
               </div>
               <div className="text-left">
@@ -85,24 +84,24 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
             </a>
 
-            {/* Value reassuring points */}
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4 text-xs text-slate-600 font-medium w-full pt-3 border-t border-slate-100">
+            {/* Value reassuring points (Clean consolidated layout, no inner divider border) */}
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs text-slate-600 font-medium w-full">
               <div className="flex items-center justify-center gap-1.5">
-                <Banknote className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <Banknote className="w-4 h-4 text-blue-700 shrink-0" />
                 <span>Direct Cash Payouts</span>
               </div>
               <div className="flex items-center justify-center gap-1.5">
-                <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0" />
                 <span>No Obligation to Enroll</span>
               </div>
               <div className="flex items-center justify-center gap-1.5">
-                <UserCheck className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <UserCheck className="w-4 h-4 text-blue-700 shrink-0" />
                 <span>Authorized Licensed Agents</span>
               </div>
             </div>
 
-            {/* Secondary Option: Callback link */}
-            <div className="mt-5 text-xs text-slate-500 pt-3 border-t border-slate-100 w-full flex items-center justify-center gap-1.5">
+            {/* Secondary Option: Callback link (No inner border) */}
+            <div className="mt-4 text-xs text-slate-500 w-full flex items-center justify-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-slate-400" />
               <span>Prefer to schedule a call?</span>
               <button
@@ -115,15 +114,15 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Mandatory Hero Disclosure Area (SINGLE designated location for no-cost claim) */}
+        {/* Hero Fine-Print Disclosure (Plain text, no bordered box, lower contrast) */}
         <div className="mt-6 max-w-2xl mx-auto text-center space-y-2">
-          <p className="text-xs text-slate-600 font-medium leading-relaxed bg-white/70 p-3 rounded-xl border border-slate-200/60 shadow-2xs">
-            <strong className="text-slate-800">Important Disclosure:</strong>{' '}
+          <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed max-w-xl mx-auto">
+            <strong className="text-slate-600 font-semibold">Important Disclosure:</strong>{' '}
             No cost or obligation to speak with a representative. Hospital indemnity insurance is a supplemental policy that pays fixed cash benefits and is not a replacement for major medical health insurance.
           </p>
 
-          <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
-            <Clock className="w-3.5 h-3.5 text-slate-400" />
+          <div className="flex items-center justify-center gap-1.5 text-[11px] sm:text-xs text-slate-400">
+            <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <span>
               <strong>Representative Hours:</strong> Mon–Fri 9:30 AM–6:30 PM ET · Sat 10:00 AM–3:00 PM ET
             </span>

@@ -200,7 +200,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           {currentPage === 'disclaimer' && (
             <div className="space-y-6 text-slate-700 text-sm leading-relaxed">
               <div className="border-b border-slate-200 pb-5">
-                <span className="text-xs font-bold uppercase text-teal-700 tracking-wider">Regulatory Compliance</span>
+                <span className="text-xs font-bold uppercase text-blue-700 tracking-wider">Regulatory Compliance</span>
                 <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">
                   Disclosures &amp; Disclaimers
                 </h1>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Phone, CheckCircle2, Shield, AlertCircle } from 'lucide-react';
+import { X, Phone, CheckCircle2, AlertCircle } from 'lucide-react';
 import { CallbackRequest } from '../types';
 import { MANDATORY_DISCLOSURES } from '../config';
 
@@ -77,14 +77,14 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
         {/* Modal Header */}
         <div className="bg-slate-900 text-white p-4 sm:p-6 flex items-start justify-between shrink-0">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-teal-300">
+            <span className="text-xs font-semibold uppercase tracking-wider text-blue-300">
               Secondary Option
             </span>
             <h3 id="callback-modal-title" className="text-lg sm:text-xl font-bold text-white mt-0.5">
               Request a Scheduled Callback
             </h3>
             <p className="text-xs text-slate-300 mt-1">
-              Need immediate answers? Call <a href={phoneTel} className="underline text-teal-200 font-bold">{phoneDisplay}</a> directly.
+              Need immediate answers? Call <a href={phoneTel} className="underline text-blue-200 font-bold">{phoneDisplay}</a> directly.
             </p>
           </div>
           <button
@@ -100,7 +100,7 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
         <div className="p-4 sm:p-6 overflow-y-auto">
           {submitted ? (
             <div className="text-center py-6">
-              <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-4">
+              <div className="w-14 h-14 rounded-full bg-teal-100 text-teal-600 mx-auto flex items-center justify-center mb-4">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h4 className="text-xl font-bold text-slate-900">Callback Request Received</h4>
@@ -119,9 +119,9 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                 </p>
                 <a
                   href={phoneTel}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm transition-colors shadow-xs"
                 >
-                  <Phone className="w-4 h-4 text-teal-300" />
+                  <Phone className="w-4 h-4 text-white" />
                   <span>Call {phoneDisplay} Now</span>
                 </a>
               </div>
@@ -214,7 +214,7 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
                 </select>
               </div>
 
-              {/* Explicit TCPA Consent Checkbox (Strict Compliance) */}
+              {/* Explicit TCPA Consent Checkbox */}
               <div className="pt-2">
                 <label className="flex items-start gap-2.5 cursor-pointer">
                   <input
@@ -240,14 +240,14 @@ export const CallbackFormModal: React.FC<CallbackFormModalProps> = ({
               <div className="pt-3 flex flex-col sm:flex-row items-center gap-3">
                 <button
                   type="submit"
-                  className="w-full sm:flex-1 py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-lg transition-colors cursor-pointer"
+                  className="w-full sm:flex-1 py-3 px-4 bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-sm rounded-xl transition-colors cursor-pointer shadow-xs"
                 >
                   Submit Callback Request
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="w-full sm:w-auto py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-lg transition-colors cursor-pointer"
+                  className="w-full sm:w-auto py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium text-sm rounded-xl transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>

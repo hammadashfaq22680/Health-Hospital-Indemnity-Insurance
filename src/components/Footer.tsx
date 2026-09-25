@@ -22,8 +22,8 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand Summary */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center">
-                <Shield className="w-5 h-5 text-teal-300" />
+              <div className="w-8 h-8 rounded-lg bg-blue-700 text-white flex items-center justify-center shadow-xs">
+                <Shield className="w-5 h-5 text-white" />
               </div>
               <span className="text-base font-bold text-white tracking-tight">
                 Health Coverage <span className="text-blue-400">Guide</span>
@@ -87,16 +87,16 @@ export const Footer: React.FC<FooterProps> = ({
             <div className="space-y-2">
               <a
                 href={phoneTel}
-                className="inline-flex items-center gap-2 text-white font-bold text-base hover:text-teal-300 transition-colors"
+                className="inline-flex items-center gap-2 text-white font-bold text-base hover:text-blue-300 transition-colors"
               >
-                <Phone className="w-4 h-4 text-teal-400" />
+                <Phone className="w-4 h-4 text-blue-400" />
                 <span>{phoneDisplay}</span>
               </a>
               <p className="text-[11px] text-slate-400">
                 Mon–Fri: 9:30 AM – 6:30 PM ET<br />
                 Sat: 10:00 AM – 3:00 PM ET
               </p>
-              <p className="text-[11px] text-teal-400 font-medium">
+              <p className="text-[11px] text-blue-400 font-medium">
                 Toll-free informational consultation
               </p>
             </div>
@@ -105,7 +105,7 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Mandatory Regulatory Disclosures (Strict Compliance) */}
         <div className="py-8 space-y-4 text-[11px] leading-relaxed text-slate-400 border-b border-slate-800">
-          <div className="p-3.5 rounded-lg bg-slate-950/80 border border-slate-800 text-slate-300 flex items-start gap-2.5">
+          <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-slate-300 flex items-start gap-2.5">
             <AlertCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <p>
               <strong className="text-white">Non-Government Entity Notice:</strong> Health Coverage Guide is privately owned and operated. We are NOT affiliated with, endorsed by, or connected to the United States Government, the Department of Health and Human Services (HHS), Healthcare.gov, Medicare, or Medicaid. For official government healthcare information, visit <a href="https://www.healthcare.gov" target="_blank" rel="noopener noreferrer" className="underline text-blue-400">Healthcare.gov</a>.

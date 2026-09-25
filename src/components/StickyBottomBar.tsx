@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Clock } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { OperatingHours } from '../types';
 
 interface StickyBottomBarProps {
@@ -29,14 +29,14 @@ export const StickyBottomBar: React.FC<StickyBottomBarProps> = ({
           <span className="text-[10px] text-slate-500 font-medium">Direct Call · No Obligation</span>
         </div>
 
-        {/* Primary Call Action Button */}
+        {/* Primary Call Action Button (Unified Primary Blue #1d4ed8) */}
         <a
           href={phoneTel}
           id="mobile-sticky-call-btn"
           className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-blue-700 active:bg-blue-900 text-white font-bold text-base shadow-md focus:outline-hidden focus-visible:ring-2 focus-visible:ring-blue-600"
           aria-label={`Call licensed representative at ${phoneDisplay}`}
         >
-          <Phone className="w-4 h-4 text-teal-300 animate-pulse" />
+          <Phone className="w-4 h-4 text-white" />
           <span>Call {phoneDisplay}</span>
         </a>
       </div>

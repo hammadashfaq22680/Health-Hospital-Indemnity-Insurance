@@ -29,11 +29,11 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ phoneDisplay, phoneTel }
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100/70 text-blue-900 text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-2">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
             Clear Answers to Common Questions
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
@@ -116,19 +116,19 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ phoneDisplay, phoneTel }
           })}
         </div>
 
-        {/* Still Have Questions Box */}
-        <div className="mt-10 bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 text-center">
-          <h3 className="text-lg font-bold text-slate-900">Have a specific question not covered here?</h3>
-          <p className="mt-1.5 text-sm text-slate-600 max-w-md mx-auto">
+        {/* Still Have Questions Box (Standardized Card Tokens) */}
+        <div className="mt-10 bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 text-center shadow-xs">
+          <h3 className="text-xl font-bold text-slate-900">Have a specific question not covered here?</h3>
+          <p className="mt-2 text-sm text-slate-600 max-w-md mx-auto">
             Licensed representatives are available by phone to answer questions about health coverage categories and carrier availability.
           </p>
 
-          <div className="mt-4">
+          <div className="mt-5">
             <a
               href={phoneTel}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm shadow-xs transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-sm shadow-xs transition-colors"
             >
-              <Phone className="w-4 h-4 text-teal-300" />
+              <Phone className="w-4 h-4 text-white" />
               <span>Call Toll-Free: {phoneDisplay}</span>
             </a>
           </div>

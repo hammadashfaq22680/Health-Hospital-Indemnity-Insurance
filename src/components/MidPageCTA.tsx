@@ -26,17 +26,18 @@ export const MidPageCTA: React.FC<MidPageCTAProps> = ({
   };
 
   return (
-    <section className="bg-slate-900 text-white py-14 sm:py-18 relative overflow-hidden">
+    <section className="bg-slate-900 text-white py-14 sm:py-20 relative overflow-hidden">
       {/* Subtle geometric background styling */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-teal-300 text-xs font-semibold mb-4">
-          <Headphones className="w-3.5 h-3.5" />
+        {/* Eyebrow Label (Unified Blue Scheme) */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/80 border border-blue-800 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4">
+          <Headphones className="w-3.5 h-3.5 text-blue-300" />
           <span>Toll-Free Licensed Agent Assistance</span>
         </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white font-sans max-w-2xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white max-w-2xl mx-auto">
           Have Questions About Hospital Indemnity Coverage?
         </h2>
 
@@ -44,17 +45,17 @@ export const MidPageCTA: React.FC<MidPageCTAProps> = ({
           Skip confusing questionnaires. Speak directly with an authorized representative who can explain fixed cash benefit tiers and check hospital indemnity carrier availability in your state.
         </p>
 
-        {/* Primary Call Action Card */}
+        {/* Primary Call Action Card (Unified Blue #1d4ed8 CTA) */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={phoneTel}
             id="midpage-primary-call-btn"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-8 py-4 rounded-xl bg-teal-500 hover:bg-teal-400 active:bg-teal-600 text-slate-950 font-extrabold text-xl sm:text-2xl shadow-lg shadow-teal-900/30 transition-all transform hover:-translate-y-0.5 focus:outline-hidden focus-visible:ring-4 focus-visible:ring-teal-300"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3.5 px-8 py-4 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white font-bold text-xl sm:text-2xl shadow-lg shadow-blue-950/50 transition-all transform hover:-translate-y-0.5 focus:outline-hidden focus-visible:ring-4 focus-visible:ring-blue-400"
             aria-label={`Call licensed representative at ${phoneDisplay}`}
           >
-            <Phone className="w-6 h-6 text-slate-950" />
+            <Phone className="w-6 h-6 text-white" />
             <div className="text-left">
-              <span className="block text-[10px] font-bold text-teal-950 uppercase tracking-wider">
+              <span className="block text-[10px] font-bold text-blue-200 uppercase tracking-wider">
                 Call Now
               </span>
               <span className="tracking-tight">{phoneDisplay}</span>
@@ -64,7 +65,7 @@ export const MidPageCTA: React.FC<MidPageCTAProps> = ({
           <button
             onClick={handleCopy}
             type="button"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold border border-slate-700 transition-colors cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-semibold border border-slate-700 transition-colors cursor-pointer"
             aria-label="Copy phone number to clipboard"
           >
             {copied ? (
@@ -90,7 +91,7 @@ export const MidPageCTA: React.FC<MidPageCTAProps> = ({
           <span>·</span>
           <button
             onClick={onOpenCallbackModal}
-            className="text-teal-300 hover:text-teal-200 underline underline-offset-2 cursor-pointer font-medium"
+            className="text-blue-300 hover:text-blue-200 underline underline-offset-2 cursor-pointer font-medium"
           >
             Request a Scheduled Call Back
           </button>

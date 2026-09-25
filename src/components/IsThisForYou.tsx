@@ -24,10 +24,10 @@ export const IsThisForYou: React.FC<IsThisForYouProps> = ({ phoneDisplay, phoneT
     <section id="who-its-for" className="py-14 sm:py-20 bg-white border-t border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-teal-800 bg-teal-50 px-3 py-1 rounded-full border border-teal-100">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider">
             Clear Expectations
           </span>
-          <h2 className="mt-3 text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">
             Is Hospital Indemnity Insurance Right for You?
           </h2>
           <p className="mt-3 text-slate-600 text-sm sm:text-base">
@@ -35,15 +35,16 @@ export const IsThisForYou: React.FC<IsThisForYouProps> = ({ phoneDisplay, phoneT
           </p>
         </div>
 
+        {/* 2-Card Grid (Standardized Card Tokens) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Who It Is Helpful For */}
-          <div className="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200 flex flex-col justify-between">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2.5 mb-4 text-blue-900">
-                <div className="w-8 h-8 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center">
+              <div className="flex items-center gap-2.5 mb-5 text-slate-900">
+                <div className="w-9 h-9 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Hospital Indemnity Can Help If:</h3>
+                <h3 className="text-xl font-bold text-slate-900">Hospital Indemnity Can Help If:</h3>
               </div>
 
               <ul className="space-y-3.5 text-sm text-slate-700">
@@ -56,25 +57,25 @@ export const IsThisForYou: React.FC<IsThisForYouProps> = ({ phoneDisplay, phoneT
               </ul>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-slate-200">
+            <div className="mt-6 pt-5 border-t border-slate-100">
               <a
                 href={phoneTel}
-                className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-blue-700 hover:bg-blue-800 active:bg-blue-900 text-white text-sm font-bold shadow-xs transition-colors"
               >
-                <Phone className="w-4 h-4 text-teal-300" />
+                <Phone className="w-4 h-4 text-white" />
                 <span>Call {phoneDisplay} to Learn More</span>
               </a>
             </div>
           </div>
 
           {/* Important Understanding / Realistic Expectations */}
-          <div className="bg-slate-50 rounded-2xl p-6 sm:p-7 border border-slate-200 flex flex-col justify-between">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-xs flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2.5 mb-4 text-slate-800">
-                <div className="w-8 h-8 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center">
+              <div className="flex items-center gap-2.5 mb-5 text-slate-900">
+                <div className="w-9 h-9 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
                   <HelpCircle className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">Important Things to Know:</h3>
+                <h3 className="text-xl font-bold text-slate-900">Important Things to Know:</h3>
               </div>
 
               <ul className="space-y-3.5 text-sm text-slate-700">
@@ -87,8 +88,8 @@ export const IsThisForYou: React.FC<IsThisForYouProps> = ({ phoneDisplay, phoneT
               </ul>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-slate-200">
-              <div className="text-xs text-slate-500 bg-white p-3 rounded-lg border border-slate-200/80 leading-relaxed">
+            <div className="mt-6 pt-5 border-t border-slate-100">
+              <div className="text-xs text-slate-500 bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 leading-relaxed">
                 <strong>Independent Guidance:</strong> Speaking with a licensed representative is an educational consultation to help evaluate available hospital cash plans in your area.
               </div>
             </div>
